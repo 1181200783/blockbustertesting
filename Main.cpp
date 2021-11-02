@@ -17,3 +17,50 @@ int main() {
     cout << "1.Developer" << endl;
     cout << "2.User" << endl;
     cout << "3.Exit" << endl;
+    while(run){
+        try{
+            cout << "Enter Type:";
+            cin >> t;
+            if(!cin.good()){
+                throw t;
+            }
+            if(t == 1){
+                if(con != "NULL"){
+                    while (innerRun){
+                        cout << "Enter Password ->";
+                        cin >> getPasswd;
+                        if(getPasswd == p){
+                            system("cls");
+                            innerRun = 0;
+                            run = 0;
+                            Developer dev;
+                        }
+                        else{
+                            cout << "Incorret password!" << endl;
+                        }
+                    }    
+                }
+                else{
+                    system("cls");
+                    Developer dev;
+                }
+            }
+            else if(t == 2){
+                system("cls");
+                run = 0;
+                Customer dev;
+            }
+            else if(t == 3){
+                exit(1);
+            }
+            else{
+                cout << "Enter currect option!" << endl;
+            }
+        }
+        catch(...){
+            cout << "error -Invalid input!";
+            exit(1);
+        };
+    }
+    return 0;
+}
